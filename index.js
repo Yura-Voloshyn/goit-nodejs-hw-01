@@ -37,7 +37,10 @@ program
 
 program.parse();
 const argv = program.opts();
-invokeAction(argv);
+
+(async () => {
+  await invokeAction(argv);
+})();
 
 // invokeAction({ action: "list" });
 // invokeAction({ action: "get", id: "5" });
